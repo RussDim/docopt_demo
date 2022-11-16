@@ -72,9 +72,51 @@ Comment: The docopt function prints out the docopt arguments.  The first argumen
 
 Run the `demo.R` script and find at least 3 different ways to break it by changing the values or order of the command line arguments at the command line (do not modify the script). Document how you did this below.
 
-> 1. Your answer here
-> 2. Your answer here
-> 3. Your answer here
+> 1. Your answer here: By leaving out the first required option `<arg2>` and only providing the first argument the script halts execution
+```
+$ Rscript demo.R first 
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+Error: This script prints out docopt args.
+Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>]
+
+Options:
+<arg>             Takes any value (this is a required positional argument)
+--arg2=<arg2>     Takes any value (this is a required option) 
+[--arg3=<arg3>]   Takes any value (this is an optional option)
+Execution halted
+```
+
+> 2. Your answer here: Writing `arg1` in front of the first argument, leads to an error in the execution, and consequently it is halted because the argument must be provided with its value only and no positional code.
+```
+$ Rscript demo.R arg1 = first --arg2=second 
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+Error: This script prints out docopt args.
+Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>]
+
+Options:
+<arg>             Takes any value (this is a required positional argument)
+--arg2=<arg2>     Takes any value (this is a required option)
+[--arg3=<arg3>]   Takes any value (this is an optional option)
+Execution halted
+```
+> 3. Your answer here: By leaving out the option specification in front of the third argument i.e. not specifying `--arg3=`, which is an optional option, the script returns an error and halts execution.
+
+```
+$ Rscript demo.R first --arg2=second third
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+Error: This script prints out docopt args.
+Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>]
+
+Options:
+<arg>             Takes any value (this is a required positional argument)
+--arg2=<arg2>     Takes any value (this is a required option)
+[--arg3=<arg3>]   Takes any value (this is an optional option)
+Execution halted
+```
+
 
 ### Exercise 5
 
