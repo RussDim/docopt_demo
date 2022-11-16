@@ -1,3 +1,4 @@
+<!-- #region -->
 ## Individual assignment 1
 rubric={correctness:1}
 
@@ -12,7 +13,7 @@ The purpose of this assignment is to ensure that everyone does some self-learnin
 
 Create a public repository on GitHub.com called `docopt_demo`. Paste the url below:
 
-> Your answer here
+> Your answer here: https://github.com/RussDim/docopt_demo
 
 ### Exercise 2
 
@@ -21,7 +22,16 @@ Create a public repository on GitHub.com called `docopt_demo`. Paste the url bel
 In [this repo](https://github.ubc.ca/MDS-2022-23/DSCI_522_dsci-workflows_students), in the `src` directory, you will find a script named `demo.R`. Access the documentation for that script from the command line by running the script with the `--help` option (and no other options or arguments). Paste the documentation that was printed out to your terminal below.
 
 > ```
-> Your answer here
+> Your answer here:
+Rscript demo.R --help
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+This script prints out docopt args.
+Usage: demo.R <arg1> --arg2=<arg2> [--arg3=<arg3>]
+Options:
+<arg>             Takes any value (this is a required positional argument)
+--arg2=<arg2>     Takes any value (this is a required option)
+[--arg3=<arg3>]   Takes any value (this is an optional option)
 > ```
 
 ### Exercise 3
@@ -36,6 +46,25 @@ Rscript src/my_script something --anoption=something more
 ```
 
 > Your answer here
+```
+$ Rscript demo.R first --arg2=second --arg3=third
+Warning message:
+package 'docopt' was built under R version 4.2.2
+List of 6
+ $ --arg2: chr "second"
+ $ --arg3: chr "third"
+ $ <arg1>: chr "first"
+ $ arg2  : chr "second"
+ $ arg3  : chr "third"
+ $ arg1  : chr "first"
+NULL
+[1] "list"
+
+Comment: The docopt function prints out the docopt arguments.  The first argument is required, so if not provided, the execution is halted.  The second argument is a required option, which if not provided will also halt execution.  The third argument is an optional option and the script will run regardless of whether it is provided or not.
+
+```
+
+
 
 ### Exercise 4
 
@@ -92,3 +121,8 @@ Create a release in your `docopt_demo` repo called `0.1.0`. Paste the URL to thi
 *Hint: See the [creating a release docs](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) to help complete this exercise.
 
 > Your answer here
+<!-- #endregion -->
+
+```{python}
+
+```
