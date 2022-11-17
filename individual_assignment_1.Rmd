@@ -180,7 +180,7 @@ NULL
 
 Modify the `demo.R` script further so that the print statements happen inside a main function. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here:  
+> Your answer here:  https://github.com/RussDim/docopt_demo/commit/dcf2e08b0ffea45ec621ae61b6edee51d6e1457b
 The body of demo.R was changed to look as follows:
 ```
 library(docopt)
@@ -217,7 +217,25 @@ NULL
 
 In [this repo](https://github.ubc.ca/MDS-2022-23/DSCI_522_dsci-workflows_students), in the `src` directory, you will find a script named `demo.py`. Run the `demo.py` script giving it appropriate arguments to see what the `docopt` function in Python returns. Try setting and not setting a value for `arg3`. How does this differ from what `docopt` returns in R? Describe what you observed below.
 
-> Your answer here
+> Your answer here: The code collects the arguments and options in a dictionary instead of a list, which was the case in R.  Furthermore R generates a list of six items - once the input from terminal and once the actual values, while Pythton's dictionary only contains the values with keys as defined in the comments of the document.
+
+Running with all arguments and options:
+```
+$ python demo.py first --arg2=second --arg3=third
+{'--arg2': 'second',
+ '--arg3': 'third',
+ '<arg1>': 'first'}
+<class 'docopt.Dict'>
+```
+Running without `arg3`:
+```
+$ python demo.py first --arg2=second
+{'--arg2': 'second',
+ '--arg3': None,    
+ '<arg1>': 'first'} 
+<class 'docopt.Dict'>
+```
+
 
 ### Exercise 8
 
