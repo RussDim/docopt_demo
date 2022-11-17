@@ -243,13 +243,32 @@ $ python demo.py first --arg2=second
 
 Copy the `demo.py` script into your `docopt_demo` repo, and then edit it to add a new positional argument that is optional. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here
+> Your answer here: https://github.com/RussDim/docopt_demo/commit/08ca2ecfb708ded6c7a54b0a317aa5bbdb2adede
+
+Output from demo.py when using positional argument:
+```
+$ python demo.py first --arg_opt=optional --arg2=second --arg3=three
+{'--arg2': 'second',
+ '--arg3': 'three',
+ '--arg_opt': 'optional',
+ '<arg1>': 'first'}
+<class 'docopt.Dict'>
+```
 
 ### Exercise 9
 
 Modify the `demo.py` script further so that the print statements happen inside a main function. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
 > Your answer here
+Output from running demo.py with `main` function:
+```
+$ python demo.py first --arg_opt=optional --arg2=second --arg3=three
+{'--arg2': 'second',
+ '--arg3': 'three',
+ '--arg_opt': 'optional',
+ '<arg1>': 'first'}
+<class 'docopt.Dict'>
+```
 
 ### Exercise 10
 
