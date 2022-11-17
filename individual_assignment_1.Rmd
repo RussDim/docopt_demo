@@ -259,7 +259,8 @@ $ python demo.py first --arg_opt=optional --arg2=second --arg3=three
 
 Modify the `demo.py` script further so that the print statements happen inside a main function. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here
+> Your answer here: https://github.com/RussDim/docopt_demo/commit/48a429e419909f02540db3e6e78f231c95de8bd5
+
 Output from running demo.py with `main` function:
 ```
 $ python demo.py first --arg_opt=optional --arg2=second --arg3=three
@@ -276,7 +277,7 @@ Create a release in your `docopt_demo` repo called `0.1.0`. Paste the URL to thi
 
 *Hint: See the [creating a release docs](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) to help complete this exercise.
 
-> Your answer here
+> Your answer here: https://github.com/RussDim/docopt_demo/releases/tag/0.1.0
 <!-- #endregion -->
 
 ```{python}
