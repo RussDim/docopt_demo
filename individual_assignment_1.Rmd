@@ -124,7 +124,53 @@ Execution halted
 
 Copy the `demo.R` script into your `docopt_demo` repo, and then edit it to add a new positional argument that is optional. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here
+> Your answer here: Added a new line in options after the first argument putting `arg_opt` in square brackets:
+```
+Options:
+<arg>             Takes any value (this is a required positional argument)
+[<arg_opt>]       Takes any value (this is an optiotnal positional argument)
+--arg2=<arg2>     Takes any value (this is a required option)
+[--arg3=<arg3>]   Takes any value (this is an optional option)
+" -> doc
+```
+Out put is as follows when arg_opt skipped:
+```
+$ Rscript demo.R first --arg2=second --arg3=third
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+List of 8
+ $ --arg2   : chr "second"
+ $ --arg3   : chr "third" 
+ $ <arg1>   : chr "first" 
+ $ <arg_opt>: NULL        
+ $ arg2     : chr "second"
+ $ arg3     : chr "third" 
+ $ arg1     : chr "first" 
+ $ arg_opt  : NULL        
+NULL
+[1] "list"
+
+```
+Out put is as follows when arg_opt is added:
+
+```
+$ Rscript demo.R first optional --arg2=second --arg3=third
+Warning message:
+package 'docopt' was built under R version 4.2.2 
+List of 8
+ $ --arg2   : chr "second"  
+ $ --arg3   : chr "third"   
+ $ <arg1>   : chr "first"   
+ $ <arg_opt>: chr "optional"
+ $ arg2     : chr "second"  
+ $ arg3     : chr "third"   
+ $ arg1     : chr "first"   
+ $ arg_opt  : chr "optional"
+NULL
+[1] "list"
+
+```
+
 
 ### Exercise 6
 
