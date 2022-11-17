@@ -11,7 +11,15 @@ Options:
 [--arg3=<arg3>]   Takes any value (this is an optional option)
 " -> doc
 
+# +
 library(docopt)
 opt <- docopt(doc)
+main <- function() {
 print(opt)
 print(typeof(opt))
+    }
+
+main()
+# -
+
+

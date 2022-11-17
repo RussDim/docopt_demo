@@ -124,7 +124,9 @@ Execution halted
 
 Copy the `demo.R` script into your `docopt_demo` repo, and then edit it to add a new positional argument that is optional. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here: Added a new line in options after the first argument putting `arg_opt` in square brackets:
+> Your answer here: https://github.com/RussDim/docopt_demo/commit/15435527e6a996b5cedb60e1f8d32bbfd7b57d57
+
+Added a new line in options after the first argument putting `arg_opt` in square brackets:
 ```
 Options:
 <arg>             Takes any value (this is a required positional argument)
@@ -178,7 +180,36 @@ NULL
 
 Modify the `demo.R` script further so that the print statements happen inside a main function. Commit this change and push it to your `docopt_demo` repository.  Paste the URL to this commit below:
 
-> Your answer here
+> Your answer here:  
+The body of demo.R was changed to look as follows:
+```
+library(docopt)
+opt <- docopt(doc)
+main <- function() {
+print(opt)
+print(typeof(opt))
+    }
+
+main()
+```
+
+output from terminal:
+```
+$ Rscript demo.R first optional --arg2=second --arg3=third
+Warning message:
+package 'docopt' was built under R version 4.2.2
+List of 8
+ $ --arg2   : chr "second"
+ $ --arg3   : chr "third"
+ $ <arg1>   : chr "first"
+ $ <arg_opt>: chr "optional"
+ $ arg2     : chr "second"
+ $ arg3     : chr "third"
+ $ arg1     : chr "first"
+ $ arg_opt  : chr "optional"
+NULL
+[1] "list"
+```
 
 ### Exercise 7
 
