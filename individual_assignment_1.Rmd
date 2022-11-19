@@ -280,6 +280,4 @@ Create a release in your `docopt_demo` repo called `0.1.0`. Paste the URL to thi
 > Your answer here: https://github.com/RussDim/docopt_demo/releases/tag/0.1.0
 <!-- #endregion -->
 
-```{python}
 
-```
